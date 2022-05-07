@@ -10,9 +10,8 @@ def pdf_to_mp3(file_path=file, language='ru'):
     """
     Create .mp3 file and .txt from pdf file
     :param file_path: path to pdf file
-    :param language: choosen language of file
+    :param language: chosen language of file
     """
-
     if Path(file_path).is_file() and Path(file_path).suffix == '.pdf':
         with pdfplumber.PDF(open(file_path, mode='rb')) as pdf:
             pages = [page.extract_text() for page in pdf.pages]
